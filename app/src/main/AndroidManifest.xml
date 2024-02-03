@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Catalogo_Super"
         tools:targetApi="31">
         <activity
+            android:name=".DetallActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
