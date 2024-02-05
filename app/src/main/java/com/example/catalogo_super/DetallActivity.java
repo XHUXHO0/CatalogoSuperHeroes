@@ -9,6 +9,7 @@ import com.example.catalogo_super.databinding.ActivityMainBinding;
 
 public class DetallActivity extends AppCompatActivity {
 
+    public static final String SUPERHERO_KEY = "superhero";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,16 +18,12 @@ public class DetallActivity extends AppCompatActivity {
 
         // creamos una variable con multiples valores como un json
         Bundle extras = getIntent().getExtras();
-        // tomamos los valores y los ponemos en variables locales
-        String superheroName = extras.getString("superhero_name");
-        String alterEgo = extras.getString("alter_ego");
-        String bio = extras.getString("bio");
-        float rating = extras.getFloat("rating");
-
-        binding.heroName.setText(superheroName);
-        binding.alterEgoText.setText(alterEgo);
-        binding.bioText.setText(bio);
-        binding.ratingBar.setRating(rating);
+        // se cambia getString por getParcelable pora tomar datos desde la clase que creamos
+        Superhero superhero = extras.getParcelable("SUPERHERO_KEY");
+        binding.heroName.setText(superhero.getName());
+        binding.alterEgoText.setText(superhero.getAlterego());
+        binding.bioText.setText(superhero.getBio());
+        binding.ratingBar.setRating(superhero.getPower());
 
     }
 }

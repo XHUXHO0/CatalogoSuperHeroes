@@ -24,11 +24,12 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     private void openDetailActivity(String superheroName,String alterEgo,String bio,float rating){
+
+        Superhero superhero = new Superhero(superheroName,alterEgo,bio,rating);
+
         Intent intent = new Intent(this,DetallActivity.class);
-        intent.putExtra("superhero_name", superheroName);
-        intent.putExtra("alter_ego", alterEgo);
-        intent.putExtra("bio", bio);
-        intent.putExtra("rating", rating);
+        intent.putExtra("SUPERHERO_KEY", superhero);
+
         startActivity(intent);
     }
 }
