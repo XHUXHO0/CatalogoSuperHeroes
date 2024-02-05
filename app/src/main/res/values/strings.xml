@@ -2,6 +2,6 @@
     <string name="app_name">Catalogo _Super</string>
     <string name="alter_ego_text">Alter ego</string>
     <string name="imagen">imagen</string>
-    <string name="bio">Bio_text</string>
+    <string name="bio_text">Bio</string>
     <string name="tony_stark_text">Tony Stark</string>
 </resources>
