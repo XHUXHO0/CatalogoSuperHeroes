@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="superhero"
+            type="com.example.catalogo_super.Superhero" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -21,15 +23,16 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+            tools:srcCompat="@tools:sample/backgrounds/scenic"
+            android:contentDescription="@string/imagen" />
 
 
         <TextView
-            android:id="@+id/heroName"
+            android:id="@+id/hero_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:padding="16dp"
-            android:text="Iron Man"
+            android:text="@{superhero.name}"
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -38,43 +41,42 @@
 
 
         <TextView
-            android:id="@+id/text_hero_name"
+            android:id="@+id/text_alterego"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="12dp"
             android:layout_marginEnd="16dp"
-            android:text="Alter ego"
+            android:text="@string/alter_ego_text"
             android:textAllCaps="false"
             android:textColor="@android:color/darker_gray"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/heroName" />
+            app:layout_constraintTop_toBottomOf="@+id/hero_name" />
 
         <TextView
             android:id="@+id/alter_ego_text"
-
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:text="Tony Stark"
+            android:text="@{superhero.alterego}"
             android:textColor="@color/black"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_hero_name" />
+            app:layout_constraintTop_toBottomOf="@+id/text_alterego" />
 
         <TextView
-            android:id="@+id/text_name_Hero"
+            android:id="@+id/text_bio"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:text="Alter ego"
+            android:text="@string/bio"
             android:textAllCaps="false"
             android:textColor="@android:color/darker_gray"
             app:layout_constraintEnd_toEndOf="parent"
@@ -90,13 +92,13 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:text="Tony Stark"
+            android:text="@{superhero.bio}"
             android:textColor="@color/black"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_name_Hero" />
+            app:layout_constraintTop_toBottomOf="@+id/text_bio" />
 
 
         <RatingBar
@@ -106,6 +108,7 @@
             android:layout_marginTop="116dp"
             android:progressTint="@color/yellow"
             android:isIndicator="true"
+            android:rating="@{superhero.power}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"

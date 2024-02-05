@@ -20,10 +20,7 @@ public class DetallActivity extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         // se cambia getString por getParcelable pora tomar datos desde la clase que creamos
         Superhero superhero = extras.getParcelable("SUPERHERO_KEY");
-        binding.heroName.setText(superhero.getName());
-        binding.alterEgoText.setText(superhero.getAlterego());
-        binding.bioText.setText(superhero.getBio());
-        binding.ratingBar.setRating(superhero.getPower());
+        binding.setSuperhero(superhero);
 
     }
 }
